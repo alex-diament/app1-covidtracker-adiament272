@@ -24,10 +24,11 @@ public class actvivity_second extends AppCompatActivity {
         textView = findViewById(R.id.text_message);
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        Boolean Name = intent.getBooleanExtra("NAME",false);
+        Boolean Name = intent.getBooleanExtra("name",false);
         ArrayList<String> listOfSymptoms = intent.getStringArrayListExtra("ListOfSymptoms");
         Boolean school = intent.getBooleanExtra("School1", true);
-        if (Name != true) {
+        System.out.println(Name.toString());
+        if (Name == true) {
             if (message == null)
                 textView.setText("???? null");
             else {

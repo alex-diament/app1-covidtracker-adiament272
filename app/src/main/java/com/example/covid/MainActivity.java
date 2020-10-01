@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String Fever = "com.example.covid.extra.Fever";
     public EditText mMessageEditText;
 
+    public EditText temp2;
     ArrayList<String> listOfSymptoms = new ArrayList<>();
 
     CheckBox checkbox1;
@@ -44,11 +45,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void launchSecondActivity(View view) {
         Log.d(LOG_TAG, "button used");
-        Boolean YESY = findViewById(R.id.editText_main).onCheckIsTextEditor();
+        temp2 = findViewById(R.id.editText_main);
+        String temp3 = temp2.getText().toString();
         Intent intent = new Intent(this, actvivity_second.class);
        String message = mMessageEditText.getText().toString();
        Boolean NAME = false;
-       if(YESY == true){
+       if(temp3.length() > 0){
            NAME = true;
        }
        int counter = 0;
@@ -85,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
        intent.putExtra("ListOfSymptoms",listOfSymptoms);
        intent.putExtra("School1",school);
       intent.putExtra("name", NAME);
+      Log.d(LOG_TAG,NAME.toString());
         startActivity(intent);
 
 }
