@@ -28,6 +28,7 @@ public class actvivity_second extends AppCompatActivity {
         ArrayList<String> listOfSymptoms = intent.getStringArrayListExtra("ListOfSymptoms");
         Boolean school = intent.getBooleanExtra("School1", true);
         System.out.println(Name.toString());
+        //if to see if there is something in text box
         if (Name == true) {
             if (message == null)
                 textView.setText("???? null");
