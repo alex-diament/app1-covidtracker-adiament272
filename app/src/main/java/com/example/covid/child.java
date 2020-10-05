@@ -21,4 +21,8 @@ public class child extends AppCompatActivity {
         this.name = name;
     }
 
+    public void setSymptoms(String symptom){
+        listOfSymptoms.add(symptom);
+    }
+
 }

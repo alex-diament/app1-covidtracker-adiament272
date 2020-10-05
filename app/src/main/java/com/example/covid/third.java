@@ -8,29 +8,31 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
-public class third extends MainActivity {
+public class third extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        MainActivity pMain = new MainActivity();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
         TextView text = findViewById(R.id.admin);
         ArrayList transfer = new ArrayList();
         String main ="";
+        child child1 = new child();
 
-        for (int i =0; i<pMain.listOfSymptoms.size(); i++){
-            main += pMain.listOfSymptoms.get(i);
+        Intent intent = null;
+        ArrayList<String> listOfSymptoms = intent.getStringArrayListExtra("ListOfSymptoms");
+        for (int i =0; i<listOfSymptoms.size();i++){
+            child1.setSymptoms(listOfSymptoms.get(i));
         }
+
         text.setText(main);
 
         Queue<String> q = new LinkedList<>();
         q.add("Yes");
         text.setText(q.toString());
-
-        Intent intent = getIntent();
 
     }
 }
