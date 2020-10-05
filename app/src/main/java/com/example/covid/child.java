@@ -17,6 +17,10 @@ public class child extends AppCompatActivity {
         return name;
     }
 
+    public String test(){
+        return "TEST";
+    }
+
     public void setName(String name) {
         this.name = name;
     }

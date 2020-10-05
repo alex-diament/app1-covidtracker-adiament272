@@ -15,6 +15,7 @@ public class actvivity_second extends AppCompatActivity {
     TextView textView;
     String main = " ";
     ArrayList<String> listOfSymptoms = new ArrayList<>();
+    String message;
 
 
     @Override
@@ -23,7 +24,7 @@ public class actvivity_second extends AppCompatActivity {
         setContentView(R.layout.activity_second);
         textView = findViewById(R.id.text_message);
         Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         Boolean Name = intent.getBooleanExtra("name",false);
         listOfSymptoms = intent.getStringArrayListExtra("ListOfSymptoms");
         Boolean school = intent.getBooleanExtra("School1", true);
@@ -54,9 +55,10 @@ public class actvivity_second extends AppCompatActivity {
        // textView.setTypeface(null,Typeface.ITALIC);
     }
     public void launchthird(View view){
-        
+
 
         Intent intent= new Intent(this, third.class);
+        intent.putExtra("name",message);
         intent.putExtra("ListOfSymptoms",listOfSymptoms);
         startActivity(intent);
 

@@ -1,6 +1,7 @@
 package com.example.covid;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.NestedScrollingChild;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,7 +25,8 @@ public class third extends AppCompatActivity {
         ArrayList transfer = new ArrayList();
         String main ="";
         child child1 = new child();
-
+        String name= intent.getStringExtra("name");
+        child1.setName(name);
         ArrayList<String> listOfSymptoms = intent.getStringArrayListExtra("ListOfSymptoms");
         for (int i =0; i<listOfSymptoms.size();i++){
             child1.setSymptoms(listOfSymptoms.get(i));
@@ -34,9 +36,12 @@ public class third extends AppCompatActivity {
        text.setText(main);
 
         q.add(child1);
-        Object children = child1;
+        Object children = q.poll();
+        Class<?> YES =  children.getClass();
 
-        text.setText(q.poll().toString());
+
+        text.setText(YES.toString());
+        System.out.println(child1.getName());
 
     }
 }
