@@ -14,7 +14,7 @@ public class actvivity_second extends AppCompatActivity {
 
     TextView textView;
     String main = " ";
-
+    ArrayList<String> listOfSymptoms = new ArrayList<>();
 
 
     @Override
@@ -25,7 +25,7 @@ public class actvivity_second extends AppCompatActivity {
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         Boolean Name = intent.getBooleanExtra("name",false);
-        ArrayList<String> listOfSymptoms = intent.getStringArrayListExtra("ListOfSymptoms");
+        listOfSymptoms = intent.getStringArrayListExtra("ListOfSymptoms");
         Boolean school = intent.getBooleanExtra("School1", true);
         System.out.println(Name.toString());
         //if to see if there is something in text box
@@ -52,12 +52,12 @@ public class actvivity_second extends AppCompatActivity {
         }
 
        // textView.setTypeface(null,Typeface.ITALIC);
-
     }
     public void launchthird(View view){
-
+        
 
         Intent intent= new Intent(this, third.class);
+        intent.putExtra("ListOfSymptoms",listOfSymptoms);
         startActivity(intent);
 
     }

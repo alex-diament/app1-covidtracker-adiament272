@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,6 +16,8 @@ public class third extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Queue<Object> q = new LinkedList<>();
+        Intent intent = getIntent();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
         TextView text = findViewById(R.id.admin);
@@ -22,17 +25,18 @@ public class third extends AppCompatActivity {
         String main ="";
         child child1 = new child();
 
-        Intent intent = null;
         ArrayList<String> listOfSymptoms = intent.getStringArrayListExtra("ListOfSymptoms");
         for (int i =0; i<listOfSymptoms.size();i++){
             child1.setSymptoms(listOfSymptoms.get(i));
+            //System.out.println("hi");
         }
 
-        text.setText(main);
+       text.setText(main);
 
-        Queue<String> q = new LinkedList<>();
-        q.add("Yes");
-        text.setText(q.toString());
+        q.add(child1);
+        Object children = child1;
+
+        text.setText(q.poll().toString());
 
     }
 }
