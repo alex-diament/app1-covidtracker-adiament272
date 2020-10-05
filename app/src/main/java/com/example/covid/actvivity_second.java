@@ -41,8 +41,9 @@ public class actvivity_second extends AppCompatActivity {
             }
             if (school == true) {
                 textView.setText(message + " you can attend school!");
-            } else
+            } else {
                 textView.setText(message + " you sadly can not attend school because you have experienced the following: " + main);
+            }
         }
         else{
             textView.setText("Please return to the previous page and enter you name");
@@ -51,5 +52,13 @@ public class actvivity_second extends AppCompatActivity {
         }
 
        // textView.setTypeface(null,Typeface.ITALIC);
+
+    }
+    public void launchthird(View view){
+
+
+        Intent intent= new Intent(this, third.class);
+        startActivity(intent);
+
     }
 }

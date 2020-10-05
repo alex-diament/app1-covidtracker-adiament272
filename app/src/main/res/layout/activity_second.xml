@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondActivity">
+    tools:context=".actvivity_second">
 
     <TextView
         android:id="@+id/text_message"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="317dp"
+        android:layout_height="407dp"
         android:layout_marginStart="45dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="45dp"
         android:layout_marginBottom="100dp"
         android:text="test"
+
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="#000000"
         android:textSize="30sp"
@@ -23,4 +24,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/adminbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="139dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="139dp"
+        android:layout_marginBottom="129dp"
+        android:onClick="launchthird"
+        android:text="Administrator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_message" />
 </androidx.constraintlayout.widget.ConstraintLayout>

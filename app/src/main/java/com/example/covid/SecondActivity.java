@@ -3,6 +3,7 @@ package com.example.covid;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,4 +24,10 @@ public class SecondActivity extends MainActivity{
     }
 
 
+    public void launchthird(View view) {
+
+
+        Intent intent= new Intent(this, third.class);
+        startActivity(intent);
+    }
 }

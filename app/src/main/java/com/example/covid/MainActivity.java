@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     public EditText temp2;
     ArrayList<String> listOfSymptoms = new ArrayList<>();
+    child child1 = new child();
 
     CheckBox checkbox1;
     CheckBox checkbox2;
@@ -57,22 +58,26 @@ public class MainActivity extends AppCompatActivity {
        Boolean school = true;
        if(checkbox1.isChecked() == true) {
            listOfSymptoms.add("Fever");
+           child1.listOfSymptoms.add("Fever");
        counter++;
        }
        if (checkbox2.isChecked() == true){
            listOfSymptoms.add("Chills");
+           child1.listOfSymptoms.add("Chills");
            counter++;
        }
         if (checkbox3.isChecked() == true) {
             listOfSymptoms.add("Dry Throat");
+            child1.listOfSymptoms.add("Dry");
             counter++;
         }
         if (checkbox4.isChecked() == true) {
             listOfSymptoms.add("Cough");
+            child1.listOfSymptoms.add("Cough");
             counter++;
         }
         if (checkbox5.isChecked() == true) {
-            listOfSymptoms.add("Sure about fever?");
+            listOfSymptoms.add("Defiantly fever");
             counter++;
         }
       // else{}
@@ -80,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             school = false;
         }
 
-
+        child1.setName(NAME.toString());
         System.out.println(findViewById(R.id.textView3).toString());
        Log.d(LOG_TAG,findViewById(R.id.textView3).toString());
        intent.putExtra(EXTRA_MESSAGE, message);
@@ -89,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
       intent.putExtra("name", NAME);
       Log.d(LOG_TAG,NAME.toString());
         startActivity(intent);
+
 
 }
 

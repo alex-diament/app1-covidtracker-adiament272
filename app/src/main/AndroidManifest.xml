@@ -9,13 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".actvivity_second"
-            android:label = "Second Activity"
+        <activity android:name=".third"></activity>
+        <activity
+            android:name=".actvivity_second"
+            android:label="Second Activity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=
-                    "com.example.android.covid.MainActivity" />
+                android:value="com.example.android.covid.MainActivity" />
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
